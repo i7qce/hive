@@ -23,9 +23,10 @@ RUN chmod 0440 /etc/sudoers.d/$USERNAME
 # * Anything else you want to do like clean up goes here *
 # ********************************************************
 
+RUN apt-get update
+RUN apt install -y unminimize
 RUN yes | unminimize
 RUN apt-get install -y ubuntu-standard
-RUN apt-get update
 RUN apt install -y python3.12-venv
 RUN apt install -y python-is-python3
 RUN apt install -y python3-dev
