@@ -40,4 +40,13 @@ RUN apt install -y curl
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
 
+# Copy and apply all dotfiles
+COPY .bashrc /opt/configs/.bashrc
+COPY .zshrc /opt/configs/.zshrc
+COPY .vimrc /opt/configs/.vimrc
+
+RUN cat /opt/configs/.bashrc >> ~/.bashrc
+RUN cat /opt/configs/.zshrc >> ~/.zshrc
+RUN cat /opt/configs/.vimrc >> ~/.vimrc
+
 CMD ["bash", "-l"]
