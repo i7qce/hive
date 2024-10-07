@@ -12,5 +12,5 @@ monospace () {
         # Copy template directory into input file directory
         cp -r "$MONOSPACE_TEMPLATE_DIR" "$input_file_dir"
 
-        dpandoc -f markdown+autolink_bare_uris --number-sections --toc -s --css monospace_template/reset.css --css monospace_template/index.css -i "$input_file" -o "$output_file" --template=monospace_template/template.html
+        dpandoc -f markdown+autolink_bare_uris --number-sections --toc -s --css monospace_template/reset.css --css monospace_template/index.css -i "$input_file" -o "$output_file" --template=monospace_template/template.html -V date="$(date +%b-%d-%Y)"
 }
