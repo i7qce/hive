@@ -473,3 +473,7 @@
   .debug-toggle-label {
     text-align: right;
   }
+
+  b, strong {
+    color: rgb(161, 75, 1);
+  }
