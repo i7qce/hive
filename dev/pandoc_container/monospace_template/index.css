@@ -154,6 +154,7 @@
   }
   
   table {
+    font-family: monospace;
     position: relative;
     top: calc(var(--line-height) / 2);
     width: calc(round(down, 100%, 1ch));
