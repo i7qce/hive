@@ -57,4 +57,8 @@ RUN cat /opt/configs/.vimrc >> ~/.vimrc
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 RUN . "$HOME/.cargo/env" 
 
+# git info
+RUN git config --global user.name i7qce
+RUN git config --global user.email 111165003+i7qce@users.noreply.github.com
+
 CMD ["bash", "-l"]
