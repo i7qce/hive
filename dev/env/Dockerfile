@@ -30,12 +30,16 @@ RUN apt-get install -y ubuntu-standard
 RUN apt install -y python3.12-venv
 RUN apt install -y python-is-python3
 RUN apt install -y python3-dev
+RUN apt install -y python3-pip
 RUN apt install -y build-essential
 RUN apt install -y vim
 RUN apt install -y git
 RUN apt install -y tmux
 RUN apt install -y htop
 RUN apt install -y curl
+
+# For opencv
+RUN apt install -y libgl1
 
 # [Optional] Set the default user. Omit if you want to keep the default as root.
 USER $USERNAME
@@ -48,5 +52,9 @@ COPY .vimrc /opt/configs/.vimrc
 RUN cat /opt/configs/.bashrc >> ~/.bashrc
 RUN cat /opt/configs/.zshrc >> ~/.zshrc
 RUN cat /opt/configs/.vimrc >> ~/.vimrc
+
+# Rust
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+RUN . "$HOME/.cargo/env" 
 
 CMD ["bash", "-l"]
