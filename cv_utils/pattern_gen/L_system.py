@@ -76,6 +76,7 @@ def plot_l_system_array(coordinates):
     plt.imshow(img)
     plt.axis("equal")
     plt.axis("off")
+    return img
 
 def run(L_params):
     system_rules = L_params['system_rules']
@@ -96,7 +97,8 @@ def run(L_params):
     if plot_type == 'LINE':
         plot_l_system(coordinates)
     elif plot_type == 'ARRAY':
-        plot_l_system_array(coordinates)
+        img = plot_l_system_array(coordinates)
+        return img
 
 S_CARPET = {
     'system_rules': {
@@ -239,6 +241,18 @@ AXIAL_TREE = {
     'segment_length': 5,
     'initial_heading': 90,
     'angle_increment': 22.5,
+}
+
+DRAGON = {
+    'system_rules': {
+        'X': 'X+YF+', 
+        'Y': '-FX-Y', 
+    },
+    'axiom': 'FX',
+    'iterations': 12,
+    'segment_length': 5,
+    'initial_heading': 0,
+    'angle_increment': 90,
 }
 
 """
