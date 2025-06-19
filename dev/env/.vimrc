@@ -42,6 +42,6 @@ autocmd BufRead,BufNewFile *.todo inoremap <S-tab> <Esc>0xxxx<Esc>A
 autocmd BufRead,BufNewFile *.todo nnoremap qq ^xxi[✓<Esc>A ‖ <Esc>:r!date<ENTER>i<BS><Esc>0
 autocmd BufRead,BufNewFile *.todo nnoremap ww ^xxi[ <Esc> /‖ <ENTER> hhD <Esc>k
 
-autocmd BufRead,BufNewFile *.todo nnoremap cc ^xxi[_<Esc>
+autocmd BufRead,BufNewFile *.todo nnoremap cc ^xxi[_<Esc>:%s/\[_\]/\[\ \]/g<ENTER><Esc><C-O>^xxi[_<Esc>
 
 autocmd BufRead,BufNewFile *.todo nnoremap jj <Esc>:g/\[✓.*/m$<ENTER>:0<Enter> 
