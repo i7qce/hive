@@ -37,6 +37,14 @@ RUN apt install -y git
 RUN apt install -y tmux
 RUN apt install -y htop
 RUN apt install -y curl
+RUN apt install -y golang
+
+# For shaders
+RUN apt install -y libglfw3-dev   
+RUN apt install -y libglew-dev
+RUN apt install -y libstb-dev
+RUN apt install -y libglm-dev
+RUN apt install -y xvfb
 
 # For opencv
 RUN apt install -y libgl1
@@ -52,10 +60,6 @@ COPY .vimrc /opt/configs/.vimrc
 RUN cat /opt/configs/.bashrc >> ~/.bashrc
 RUN cat /opt/configs/.zshrc >> ~/.zshrc
 RUN cat /opt/configs/.vimrc >> ~/.vimrc
-
-# Rust
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-RUN . "$HOME/.cargo/env" 
 
 # git info
 RUN git config --global user.name i7qce
