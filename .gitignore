@@ -2,12 +2,17 @@ __pycache__/
 .*
 !.*rc
 !.gitignore
-data/**
-!data/readme.md
 
 .ipynb_checkpoints/
 
 foundation_models/
 mlruns/
 lightning_logs/
-junk_experiments/
+experiments_junk/
+experiments_current/
+
+workspace/**
+!workspace/README.md
+
+data/**
+!data/README.md
